@@ -1,4 +1,5 @@
-import 'package:coffie/pages/onbording.dart';
+import 'package:coffie/pages/home_screen.dart';
+import 'package:coffie/pages/onbording_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const OnboardingScreen(),
+        '/home': (context) => const HomeScreen(),
+      },
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColorLight: Colors.white,
@@ -20,7 +26,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Sora',
       ),
-      home: const Onboarding(),
     );
   }
 }

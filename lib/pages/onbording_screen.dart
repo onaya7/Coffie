@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Onboarding extends StatelessWidget {
-  const Onboarding({super.key});
+class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +101,7 @@ class Onboarding extends StatelessWidget {
                                   RoundedRectangleBorder(
                                       borderRadius:
                                           BorderRadius.circular(16)))),
-                          onPressed: () {},
+                          onPressed: () => Navigator.pushNamed(context, '/home'),
                           child: const Text(
                             'Get Started',
                             style: TextStyle(
