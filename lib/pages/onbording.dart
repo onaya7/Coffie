@@ -21,7 +21,7 @@ class Onboarding extends StatelessWidget {
             Positioned(
               child: Container(
                   width: w,
-                  height: 600,
+                  height: 560,
                   color: Colors.amberAccent,
                   child: const Image(
                     image: AssetImage("assets/images/onboarding1.png"),
