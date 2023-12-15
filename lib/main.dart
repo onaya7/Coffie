@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         primaryColorLight: Colors.white,
         primaryColorDark: Colors.black,
         useMaterial3: true,
+        fontFamily: 'Sora',
       ),
       home: const Onboarding(),
     );

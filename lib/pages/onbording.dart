@@ -21,7 +21,7 @@ class Onboarding extends StatelessWidget {
             Positioned(
               child: Container(
                   width: w,
-                  height: 550,
+                  height: 600,
                   color: Colors.amberAccent,
                   child: const Image(
                     image: AssetImage("assets/images/onboarding1.png"),
@@ -33,9 +33,14 @@ class Onboarding extends StatelessWidget {
               child: Expanded(
                 child: Container(
                   width: w,
-                  padding:
-                      const EdgeInsets.only(top: 52.0, right: 30.0, left: 30.0),
-                  decoration: const BoxDecoration(color: Colors.transparent),
+                  padding: const EdgeInsets.only(
+                      top: 52.0, right: 30.0, bottom: 10.0, left: 30.0),
+                  decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [Color(0x00000000), Colors.black],
+                  )),
                   child: Column(
                     children: [
                       const Text(
@@ -64,7 +69,7 @@ class Onboarding extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       const Text(
-                        'The best grain, the finest roast, the powerful flavor.',
+                        'The best grain, the finest roast, the',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 14,
