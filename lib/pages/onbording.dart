@@ -11,19 +11,19 @@ class Onboarding extends StatelessWidget {
         body: Column(
       children: [
         Container(
-          width: w,
-          height: h / 2,
-          color: Colors.amberAccent,
-          child: Image.asset(
-            "assets/"
-          ),
-        ),
+            width: w,
+            height: h / 2,
+            color: Colors.amberAccent,
+            child: const Image(
+              image: AssetImage("assets/images/onboarding1.png"),
+              fit: BoxFit.cover,
+            )),
         Expanded(
           child: Container(
             width: w,
             padding: const EdgeInsets.only(top: 52.0, right: 30.0, left: 30.0),
-            decoration: const BoxDecoration(color: Color.fromARGB(243, 0, 0, 0)
-                ),
+            decoration:
+                const BoxDecoration(color: Color.fromARGB(243, 0, 0, 0)),
             child: Column(
               children: [
                 const Text(
@@ -38,7 +38,10 @@ class Onboarding extends StatelessWidget {
                 const Text(
                   'The best grain, the finest roast, the powerful flavor.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color.fromRGBO(169, 169, 169, 1)),
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Color.fromRGBO(169, 169, 169, 1)),
                 ),
                 const SizedBox(height: 24),
                 SizedBox(
@@ -55,7 +58,9 @@ class Onboarding extends StatelessWidget {
                     onPressed: () {},
                     child: const Text(
                       'Get Started',
-                      style: TextStyle(fontSize: 16, color: Color.fromRGBO(255, 255, 255, 1)),
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Color.fromRGBO(255, 255, 255, 1)),
                     ),
                   ),
                 )
