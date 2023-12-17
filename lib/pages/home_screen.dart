@@ -57,12 +57,21 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                         IconButton(
                                           onPressed: () {},
+                                          padding: const EdgeInsets.all(0.0),
+                                          style: ButtonStyle(
+                                            padding: MaterialStateProperty.all(
+                                                const EdgeInsets.all(0.0)),
+                                            iconSize:
+                                                MaterialStateProperty.all(20),
+                                            iconColor:
+                                                MaterialStateProperty.all(
+                                              const Color.fromRGBO(
+                                                  221, 221, 221, 1),
+                                            ),
+                                          ),
                                           icon: const Icon(
                                             Icons.keyboard_arrow_down,
                                           ),
-                                          iconSize: 20,
-                                          color: const Color.fromRGBO(
-                                              221, 221, 221, 1),
                                         )
                                       ],
                                     ),
@@ -82,6 +91,18 @@ class HomeScreen extends StatelessWidget {
                             ],
                           ))
                     ],
+                  ),
+
+                  const SizedBox(height: 10,),
+
+                  // search bar
+                  Container(
+                    width: 315,
+                    height: 52,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: const Color.fromRGBO(49, 49, 49, 1),
+                    ),
                   )
                 ],
               ),
