@@ -14,6 +14,8 @@ class PromoContainerWidget extends StatelessWidget {
       width: w,
       height: 140,
       decoration: BoxDecoration(
+          image: const DecorationImage(
+              image: AssetImage("assets/images/img.png"), fit: BoxFit.cover),
           color: const Color(0xFFEAE7E7),
           borderRadius: BorderRadius.circular(16)),
       child: Padding(
