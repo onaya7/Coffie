@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
     var w = MediaQuery.of(context).size.width;
     // var h = MediaQuery.of(context).size.height;
     return Scaffold(
-        backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
+        backgroundColor: const Color(0xFFF8F8F8),
         body: Stack(
           children: <Widget>[
             Container(
@@ -197,7 +197,8 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 24,
                     ),
-                    // listview
+
+                    // Listview
                     SizedBox(
                       width: w,
                       height: 38,
@@ -222,12 +223,12 @@ class HomeScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 16, vertical: 10),
                             decoration: BoxDecoration(
-                                color: const Color(0xFFC67C4E),
+                                color: Colors.white,
                                 borderRadius: BorderRadius.circular(12)),
                             // Machiato
                             child: const Text("Machiato",
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: Color(0xFF2F4B4E),
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600)),
                           ),
@@ -236,12 +237,12 @@ class HomeScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 16, vertical: 10),
                             decoration: BoxDecoration(
-                                color: const Color(0xFFC67C4E),
+                                color: Colors.white,
                                 borderRadius: BorderRadius.circular(12)),
                             // Latte
                             child: const Text("Latte",
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: Color(0xFF2F4B4E),
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600)),
                           ),
@@ -250,12 +251,12 @@ class HomeScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 16, vertical: 10),
                             decoration: BoxDecoration(
-                                color: const Color(0xFFC67C4E),
+                                color: Colors.white,
                                 borderRadius: BorderRadius.circular(12)),
                             // Americano
                             child: const Text("Americano",
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: Color(0xFF2F4B4E),
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600)),
                           ),
