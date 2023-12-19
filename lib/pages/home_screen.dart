@@ -123,9 +123,10 @@ class HomeScreen extends StatelessWidget {
                     ),
 
                     const SizedBox(
-                      height: 24,
+                      height: 20,
                     ),
 
+                    // promo container
                     Container(
                       width: w,
                       height: 140,
@@ -135,23 +136,132 @@ class HomeScreen extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 23, vertical: 16),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 6, vertical: 4),
-                          decoration: BoxDecoration(
-                              color: const Color(0xFFEC5050),
-                              borderRadius: BorderRadius.circular(8)),
-                          // Promo
-                          child: const Text(
-                            "Promo",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600),
-                          ),
+                        child: Stack(
+                          children: <Widget>[
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 6, vertical: 4),
+                                  decoration: BoxDecoration(
+                                      color: const Color(0xFFEC5050),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  // Promo
+                                  child: const Text(
+                                    "Promo",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                Container(
+                                  width: 200,
+                                  height: 27,
+                                  decoration: const BoxDecoration(
+                                      color: Color(0xFF1C1C1C)),
+                                ),
+                                const SizedBox(
+                                  height: 12,
+                                ),
+                                Container(
+                                  width: 149,
+                                  height: 20,
+                                  decoration: const BoxDecoration(
+                                      color: Color(0xFF1C1C1C)),
+                                ),
+                              ],
+                            ),
+                            // Buy one get one FREE
+                            const Positioned(
+                              top: 27,
+                              child: SizedBox(
+                                  width: 203,
+                                  child: Text(
+                                    "Buy one get one FREE",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.w600),
+                                  )),
+                            )
+                          ],
                         ),
                       ),
                     ),
+
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    // listview
+                    SizedBox(
+                      width: w,
+                      height: 38,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 10),
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFC67C4E),
+                                borderRadius: BorderRadius.circular(12)),
+                            // Cappuccino
+                            child: const Text("Cappuccino",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600)),
+                          ),
+                          const SizedBox(width: 6),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 10),
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFC67C4E),
+                                borderRadius: BorderRadius.circular(12)),
+                            // Machiato
+                            child: const Text("Machiato",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600)),
+                          ),
+                          const SizedBox(width: 6),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 10),
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFC67C4E),
+                                borderRadius: BorderRadius.circular(12)),
+                            // Latte
+                            child: const Text("Latte",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600)),
+                          ),
+                          const SizedBox(width: 6),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 10),
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFC67C4E),
+                                borderRadius: BorderRadius.circular(12)),
+                            // Americano
+                            child: const Text("Americano",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600)),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
