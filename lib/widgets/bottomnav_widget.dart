@@ -5,7 +5,7 @@ class BottomNavWidget extends StatelessWidget {
   const BottomNavWidget({
     super.key,
   });
-
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +16,6 @@ class BottomNavWidget extends StatelessWidget {
         ),
         color: Colors.white,
       ),
-     
       child: BottomAppBar(
         color: Colors.transparent,
         elevation: 0,
@@ -48,7 +47,6 @@ class BottomNavWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18)))
               ],
             ),
-
             Column(
               children: [
                 GestureDetector(
@@ -68,7 +66,6 @@ class BottomNavWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18)))
               ],
             ),
-
             Column(
               children: [
                 GestureDetector(
@@ -88,7 +85,6 @@ class BottomNavWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18)))
               ],
             ),
-
             Column(
               children: [
                 GestureDetector(
@@ -108,8 +104,6 @@ class BottomNavWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18)))
               ],
             ),
-
-
           ],
         ),
       ),

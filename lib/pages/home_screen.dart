@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var w = MediaQuery.of(context).size.width;
-    // var h = MediaQuery.of(context).size.height;
+
     return Scaffold(
         bottomNavigationBar: const BottomNavWidget(),
         backgroundColor: const Color(0xFFF8F8F8),

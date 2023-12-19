@@ -36,23 +36,27 @@ class HomeGridViewWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(4),
                 child: Stack(
                   children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.0),
-                          image: DecorationImage(
-                              image: AssetImage(
-                                pngimageurl[index].toString(),
-                              ),
-                              fit: BoxFit.cover)),
-                      width: 141,
-                      height: 132,
+                    GestureDetector(
+                      onTap: () {
+                        // print("image is clicked$index");
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8.0),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                  pngimageurl[index].toString(),
+                                ),
+                                fit: BoxFit.cover)),
+                        width: 141,
+                        height: 132,
+                      ),
                     ),
                     Container(
                         width: 51,
                         height: 25,
                         decoration: BoxDecoration(
-                            color:
-                                Colors.black.withOpacity(0.1599999964237213),
+                            color: Colors.black.withOpacity(0.1599999964237213),
                             borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(16),
                               bottomRight: Radius.circular(16),
