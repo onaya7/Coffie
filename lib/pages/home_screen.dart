@@ -1,3 +1,4 @@
+import 'package:coffie/widgets/bottomnav_widget.dart';
 import 'package:coffie/widgets/home_gridview_widget.dart';
 import 'package:coffie/widgets/home_header_widget.dart';
 import 'package:coffie/widgets/home_listview_widget.dart';
@@ -13,6 +14,7 @@ class HomeScreen extends StatelessWidget {
     var w = MediaQuery.of(context).size.width;
     // var h = MediaQuery.of(context).size.height;
     return Scaffold(
+        bottomNavigationBar: const BottomNavWidget(),
         backgroundColor: const Color(0xFFF8F8F8),
         body: Stack(
           children: <Widget>[
@@ -55,11 +57,13 @@ class HomeScreen extends StatelessWidget {
                     ),
 
                     // Gridview
-                    const HomeGridViewWidget()
+                    HomeGridViewWidget(),
+
+                    // Bottomappbar
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ));
   }
