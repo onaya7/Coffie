@@ -6,7 +6,7 @@ class HomeGridViewWidget extends StatelessWidget {
     super.key,
   });
 
-  final List<double> ratings = [4.8, 4.8, 4.8, 4.8];
+  final List<double> ratings = [4.8, 4.9, 4.5, 4.0];
   final List<String> pngimageurl = [
     'assets/images/c1.png',
     'assets/images/c2.png',
