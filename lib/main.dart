@@ -1,5 +1,6 @@
-import 'package:coffie/pages/home_screen.dart';
-import 'package:coffie/pages/onbording_screen.dart';
+import 'package:coffie/screens/detail_screen.dart';
+import 'package:coffie/screens/home_screen.dart';
+import 'package:coffie/screens/onbording_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const OnboardingScreen(),
         '/home': (context) => const HomeScreen(),
+        '/detail': (context) => const DetailScreen()
       },
       title: 'Flutter Demo',
       theme: ThemeData(

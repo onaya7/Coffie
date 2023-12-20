@@ -37,9 +37,7 @@ class HomeGridViewWidget extends StatelessWidget {
                 child: Stack(
                   children: <Widget>[
                     GestureDetector(
-                      onTap: () {
-                        // print("image is clicked$index");
-                      },
+                      onTap: () => Navigator.pushNamed(context, '/detail'),
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8.0),
