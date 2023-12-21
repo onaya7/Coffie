@@ -10,6 +10,7 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: Padding(
           padding: const EdgeInsets.only(left: 31.0),
           child: GestureDetector(
@@ -340,7 +341,7 @@ class DetailScreen extends StatelessWidget {
                     height: 62,
                     width: 217,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () => Navigator.pushNamed(context, '/order'),
                       style: TextButton.styleFrom(
                         elevation: 0,
                         backgroundColor: const Color(0xFFC67C4E),
