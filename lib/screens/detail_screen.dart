@@ -8,7 +8,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F8F8),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.only(left: 31.0),
@@ -46,7 +46,8 @@ class DetailScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        padding: const EdgeInsets.only(left: 31.0, top: 5, right: 29.0),
+        padding: const EdgeInsets.only(left: 31.0, top: 5, right: 29.0, bottom: 5),
+        width: w,
         color: Colors.white,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -289,6 +290,14 @@ class DetailScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Color(0x3FE4E4E4),
+              blurRadius: 24,
+              offset: Offset(0, -10),
+              spreadRadius: 0,
+            )
+          ],
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(30),
             topLeft: Radius.circular(30),
@@ -297,7 +306,7 @@ class DetailScreen extends StatelessWidget {
         ),
         child: BottomAppBar(
             color: Colors.transparent,
-            elevation: ,
+            elevation: 0,
             height: 87,
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 16),
             child: Row(
