@@ -10,11 +10,14 @@ class OrderScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor:  Colors.white,
+        backgroundColor: Colors.white,
         leading: Padding(
           padding: const EdgeInsets.only(left: 31.0),
           child: GestureDetector(
-            onTap: () => Navigator.pushNamed(context, '/detail', ),
+            onTap: () => Navigator.pop(
+              context,
+              '/detail',
+            ),
             child: SvgPicture.asset(
               'assets/images/caret-left.svg',
               color: Colors.black,
