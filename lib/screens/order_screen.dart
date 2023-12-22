@@ -1,5 +1,8 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:slide_to_act/slide_to_act.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});
@@ -40,8 +43,37 @@ class OrderScreen extends StatelessWidget {
             const EdgeInsets.only(left: 31.0, top: 5, right: 29.0, bottom: 5),
         width: w,
         color: Colors.white,
-        child: const Column(
-            crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[]),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              SlideAction(
+                sliderRotate: false,
+                height: 52,
+                sliderButtonIconPadding: 0.5,
+                sliderButtonIcon: Container(
+                  alignment: Alignment.center,
+                  width: 153.5,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                  child: const Text(
+                    'Deliver',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+                text: 'Pick Up',
+                textStyle: const TextStyle(
+                    color: Color(0xFF2E2D2C),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
+                elevation: 0,
+                borderRadius: 15.0,
+                outerColor: const Color(0xFFF2F2F2),
+                innerColor: const Color(0xFFC67C4E),
+              )
+            ]),
       ),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
@@ -59,61 +91,12 @@ class OrderScreen extends StatelessWidget {
           ),
           color: Colors.white,
         ),
-        child: BottomAppBar(
-            color: Colors.transparent,
-            elevation: 0,
-            height: 87,
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 16),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Price',
-                        style: TextStyle(
-                          color: Color(0xFF9B9B9B),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        '\$ 4.53',
-                        style: TextStyle(
-                          color: Color(0xFFC67C4E),
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 62,
-                    width: 217,
-                    child: TextButton(
-                      onPressed: () => Navigator.pushNamed(context, '/order'),
-                      style: TextButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: const Color(0xFFC67C4E),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                      ),
-                      child: const Text(
-                        'Buy Now',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ),
-                ])),
+        child: const BottomAppBar(
+          color: Colors.transparent,
+          elevation: 0,
+          height: 87,
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
+        ),
       ),
     );
   }
