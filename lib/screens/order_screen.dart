@@ -1,8 +1,7 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:slide_to_act/slide_to_act.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});
@@ -40,38 +39,69 @@ class OrderScreen extends StatelessWidget {
       ),
       body: Container(
         padding:
-            const EdgeInsets.only(left: 31.0, top: 5, right: 29.0, bottom: 5),
+            const EdgeInsets.only(left: 30.0, top: 5, right: 30.0, bottom: 5),
         width: w,
         color: Colors.white,
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SlideAction(
-                sliderRotate: false,
-                height: 52,
-                sliderButtonIconPadding: 0.5,
-                sliderButtonIcon: Container(
-                  alignment: Alignment.center,
-                  width: 153.5,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-                  child: const Text(
-                    'Deliver',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
+              Center(
+                child: Container(
+                  width: 315,
+                  height: 48,
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                      color: const Color(0xFFF2F2F2),
+                      borderRadius: BorderRadius.circular(14)),
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          print('Deliver button');
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 153.50,
+                          height: 40,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFFC67C4E),
+                              borderRadius: BorderRadius.circular(10)),
+                          child:
+                              // Deliver
+                              const Text(
+                            'Deliver',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          print('Pick Up button');
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 153.50,
+                          height: 40,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFFF2F2F2),
+                              borderRadius: BorderRadius.circular(10)),
+                          child:
+                              // Pick Up
+                              const Text(
+                            'Pick Up',
+                            style: TextStyle(
+                                color: Color(0xFF2E2D2C),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                text: 'Pick Up',
-                textStyle: const TextStyle(
-                    color: Color(0xFF2E2D2C),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400),
-                elevation: 0,
-                borderRadius: 15.0,
-                outerColor: const Color(0xFFF2F2F2),
-                innerColor: const Color(0xFFC67C4E),
               )
             ]),
       ),
