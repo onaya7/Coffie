@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../models/coffee_detail_data.dart';
+
 class HomeGridViewWidget extends StatelessWidget {
   HomeGridViewWidget({
     super.key,
@@ -13,7 +15,7 @@ class HomeGridViewWidget extends StatelessWidget {
     'assets/images/c3.png',
     'assets/images/c4.png',
   ];
-  final List<double> amount = [4.53, 4.53, 4.53, 4.53];
+  final List<double> amount = [4.53, 3.91, 5.53, 4.23];
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class HomeGridViewWidget extends StatelessWidget {
                 child: Stack(
                   children: <Widget>[
                     GestureDetector(
-                      onTap: () => Navigator.pushNamed(context, '/detail'),
+                      onTap: () => {},
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8.0),
@@ -125,7 +127,13 @@ class HomeGridViewWidget extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () => Navigator.pushNamed(
+                                context, '/detail',
+                                arguments: CoffeeDetailData(
+                                    ratings: ratings[index],
+                                    pngimageurl: pngimageurl[index],
+                                    amount: amount[index],
+                                    index: index)),
                             icon: SvgPicture.asset(
                               'assets/images/add-icon.svg',
                               color: Colors.white,

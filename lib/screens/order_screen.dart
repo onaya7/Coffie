@@ -14,7 +14,7 @@ class OrderScreen extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(left: 31.0),
           child: GestureDetector(
-            onTap: () => Navigator.pushNamed(context, '/detail'),
+            onTap: () => Navigator.pushNamed(context, '/detail', ),
             child: SvgPicture.asset(
               'assets/images/caret-left.svg',
               color: Colors.black,

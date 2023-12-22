@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../models/coffee_detail_data.dart';
+
 class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
+    final CoffeeDetailData data =
+        ModalRoute.of(context)!.settings.arguments as CoffeeDetailData;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -47,7 +52,8 @@ class DetailScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        padding: const EdgeInsets.only(left: 31.0, top: 5, right: 29.0, bottom: 5),
+        padding:
+            const EdgeInsets.only(left: 31.0, top: 5, right: 29.0, bottom: 5),
         width: w,
         color: Colors.white,
         child: Column(
@@ -61,9 +67,9 @@ class DetailScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16.0),
                     color: Colors.black,
-                    image: const DecorationImage(
+                    image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage('assets/images/d1.png'))),
+                        image: AssetImage(data.pngimageurl))),
               ),
             ),
             const SizedBox(
@@ -105,15 +111,15 @@ class DetailScreen extends StatelessWidget {
                     const SizedBox(
                       width: 4,
                     ),
-                    const Text.rich(TextSpan(children: <TextSpan>[
+                    Text.rich(TextSpan(children: <TextSpan>[
                       TextSpan(
-                          text: '4.8',
-                          style: TextStyle(
+                          text: '${data.ratings}',
+                          style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                               color: Color(0xFF2F2D2C))),
-                      TextSpan(text: ' '),
-                      TextSpan(
+                      const TextSpan(text: ' '),
+                      const TextSpan(
                           text: '(230)',
                           style: TextStyle(
                               fontSize: 12,
@@ -313,10 +319,10 @@ class DetailScreen extends StatelessWidget {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  const Column(
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         'Price',
                         style: TextStyle(
                           color: Color(0xFF9B9B9B),
@@ -324,12 +330,12 @@ class DetailScreen extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
                       Text(
-                        '\$ 4.53',
-                        style: TextStyle(
+                        '\$ ${data.amount}',
+                        style: const TextStyle(
                           color: Color(0xFFC67C4E),
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
