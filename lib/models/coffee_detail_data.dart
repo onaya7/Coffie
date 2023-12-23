@@ -5,8 +5,8 @@ class CoffeeDetailData {
   final int index;
 
   CoffeeDetailData(
-      {required this.ratings,
-      required this.pngimageurl,
-      required this.amount,
-      required this.index});
+      {required  this.ratings,
+       required  this.pngimageurl,
+       required this.amount,
+       required this.index});
 }

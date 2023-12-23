@@ -19,10 +19,12 @@ class OrderScreen extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(left: 31.0),
           child: GestureDetector(
-            onTap: () => Navigator.pushNamed(
-              context,
-              '/detail',
-            ),
+            onTap: () => Navigator.pushNamed(context, '/detail',
+                arguments: CoffeeDetailData(
+                    ratings: data.ratings,
+                    pngimageurl: data.pngimageurl,
+                    amount: data.amount,
+                    index: data.index)),
             child: SvgPicture.asset(
               'assets/images/caret-left.svg',
               color: Colors.black,
@@ -225,7 +227,7 @@ class OrderScreen extends StatelessWidget {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: AssetImage(
-                                data.pngimageurl,
+                                data.pngimageurl.toString(),
                               ),
                             )),
                         width: 54,

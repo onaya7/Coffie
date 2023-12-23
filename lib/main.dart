@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomeScreen(),
         '/detail': (context) => const DetailScreen(),
          '/order': (context) => const OrderScreen()
-
       },
       title: 'Flutter Demo',
       theme: ThemeData(

@@ -71,7 +71,7 @@ class DetailScreen extends StatelessWidget {
                     color: Colors.black,
                     image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage(data.pngimageurl))),
+                        image: AssetImage(data.pngimageurl.toString()))),
               ),
             ),
             const SizedBox(
@@ -349,7 +349,7 @@ class DetailScreen extends StatelessWidget {
                     height: 62,
                     width: 217,
                     child: TextButton(
-                      onPressed: () => Navigator.popAndPushNamed(context, '/order', arguments:CoffeeDetailData(
+                      onPressed: () => Navigator.pushNamed(context, '/order', arguments:CoffeeDetailData(
                                     ratings: data.ratings,
                                     pngimageurl: data.pngimageurl,
                                     amount: data.amount,
