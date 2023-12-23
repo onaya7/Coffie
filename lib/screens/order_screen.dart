@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use, avoid_print
 
+import 'package:coffie/models/coffee_detail_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,6 +10,8 @@ class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
+    final CoffeeDetailData data =
+        ModalRoute.of(context)!.settings.arguments as CoffeeDetailData;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -16,7 +19,7 @@ class OrderScreen extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(left: 31.0),
           child: GestureDetector(
-            onTap: () => Navigator.pop(
+            onTap: () => Navigator.pushNamed(
               context,
               '/detail',
             ),
@@ -102,6 +105,214 @@ class OrderScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+              ),
+              const SizedBox(height: 24),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  const Text(
+                    'Delivery Address',
+                    style: TextStyle(
+                        color: Color(0xFF2F2D2C),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const Text(
+                    'Jl. Kpg Sutoyo',
+                    style: TextStyle(
+                        color: Color(0xFF303336),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  const Text(
+                    'Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai.',
+                    style: TextStyle(
+                        color: Color(0xFF7F7F7F),
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () {
+                          print('edit address button pressed');
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12, vertical: 6),
+                          decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  side: const BorderSide(
+                                      width: 1, color: Color(0xFFDEDEDE)),
+                                  borderRadius: BorderRadius.circular(16))),
+                          child: Row(
+                            children: <Widget>[
+                              SvgPicture.asset('assets/images/icon-edit.svg'),
+                              const SizedBox(width: 4),
+                              const Text(
+                                'Edit Address',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFF303336)),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          print('Add Note button pressed');
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12, vertical: 6),
+                          decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  side: const BorderSide(
+                                      width: 1, color: Color(0xFFDEDEDE)),
+                                  borderRadius: BorderRadius.circular(16))),
+                          child: Row(
+                            children: <Widget>[
+                              SvgPicture.asset('assets/images/icon-note.svg'),
+                              const SizedBox(width: 4),
+                              const Text(
+                                'Add Note',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFF303336)),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Divider(
+                color: Color(0xFFEAEAEA),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage(
+                                data.pngimageurl,
+                              ),
+                            )),
+                        width: 54,
+                        height: 54,
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            'Cappucino',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xFF2F2D2C)),
+                          ),
+                          Text(
+                            'with Chocolate',
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xFF9B9B9B)),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 90,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        GestureDetector(
+                          onTap: () {
+                            print("minus button");
+                          },
+                          child: Container(
+                            width: 28,
+                            height: 28,
+                            alignment: Alignment.center,
+                            decoration: ShapeDecoration(
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    side: const BorderSide(
+                                        width: 1, color: Color(0xFFEAEAEA)))),
+                            child: SvgPicture.asset(
+                              'assets/images/icon-minus.svg',
+                              width: 16,
+                              height: 16,
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          '1',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFF2F2D2C)),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            print("add button");
+                          },
+                          child: Container(
+                            width: 28,
+                            height: 28,
+                            alignment: Alignment.center,
+                            decoration: ShapeDecoration(
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    side: const BorderSide(
+                                        width: 1, color: Color(0xFFEAEAEA)))),
+                            child: SvgPicture.asset(
+                              'assets/images/icon-plus.svg',
+                              width: 16,
+                              height: 16,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
               )
             ]),
       ),

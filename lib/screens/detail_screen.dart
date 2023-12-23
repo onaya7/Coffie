@@ -349,7 +349,11 @@ class DetailScreen extends StatelessWidget {
                     height: 62,
                     width: 217,
                     child: TextButton(
-                      onPressed: () => Navigator.pushNamed(context, '/order'),
+                      onPressed: () => Navigator.popAndPushNamed(context, '/order', arguments:CoffeeDetailData(
+                                    ratings: data.ratings,
+                                    pngimageurl: data.pngimageurl,
+                                    amount: data.amount,
+                                    index: data.index)),
                       style: TextButton.styleFrom(
                         elevation: 0,
                         backgroundColor: const Color(0xFFC67C4E),
