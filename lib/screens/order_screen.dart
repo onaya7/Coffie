@@ -61,7 +61,7 @@ class OrderScreen extends StatelessWidget {
                   children: <Widget>[
                     Center(
                       child: Container(
-                        width: 315,
+                        width: w,
                         height: 48,
                         padding: const EdgeInsets.all(4),
                         decoration: BoxDecoration(
