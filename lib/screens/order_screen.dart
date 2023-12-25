@@ -10,8 +10,10 @@ class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
+
     final CoffeeDetailData data =
         ModalRoute.of(context)!.settings.arguments as CoffeeDetailData;
+    final totalPayment = data.amount + 1.0;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -25,11 +27,15 @@ class OrderScreen extends StatelessWidget {
                     pngimageurl: data.pngimageurl,
                     amount: data.amount,
                     index: data.index)),
-            child: SvgPicture.asset(
-              'assets/images/caret-left.svg',
-              color: Colors.black,
-              width: 24,
-              height: 24,
+            child: Container(
+              alignment: Alignment.center,
+              child: SvgPicture.asset(
+                'assets/images/caret-left.svg',
+                color: Colors.black,
+                width: 24,
+                height: 24,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
@@ -42,303 +48,312 @@ class OrderScreen extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Container(
-        padding:
-            const EdgeInsets.only(left: 30.0, top: 5, right: 30.0, bottom: 5),
-        width: w,
-        color: Colors.white,
-        child: Stack(
-          children: <Widget>[
-            const Center(
-              child: Divider(
-                thickness: 4,
-                color: Color(0xFFF4F4F4),
-              ),
-            ),
-            Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Center(
-                    child: Container(
-                      width: 315,
-                      height: 48,
-                      padding: const EdgeInsets.all(4),
-                      decoration: BoxDecoration(
-                          color: const Color(0xFFF2F2F2),
-                          borderRadius: BorderRadius.circular(14)),
-                      child: Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              print('Deliver button');
-                            },
-                            child: Container(
-                              alignment: Alignment.center,
-                              width: 153.50,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFFC67C4E),
-                                  borderRadius: BorderRadius.circular(10)),
-                              child:
-                                  // Deliver
-                                  const Text(
-                                'Deliver',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              print('Pick Up button');
-                            },
-                            child: Container(
-                              alignment: Alignment.center,
-                              width: 153.50,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                  color: const Color(0xFFF2F2F2),
-                                  borderRadius: BorderRadius.circular(10)),
-                              child:
-                                  // Pick Up
-                                  const Text(
-                                'Pick Up',
-                                style: TextStyle(
-                                    color: Color(0xFF2E2D2C),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      const Text(
-                        'Delivery Address',
-                        style: TextStyle(
-                            color: Color(0xFF2F2D2C),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      const Text(
-                        'Jl. Kpg Sutoyo',
-                        style: TextStyle(
-                            color: Color(0xFF303336),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      const Text(
-                        'Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai.',
-                        style: TextStyle(
-                            color: Color(0xFF7F7F7F),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
-                      ),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          GestureDetector(
-                            onTap: () {
-                              print('edit address button pressed');
-                            },
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 6),
-                              decoration: ShapeDecoration(
-                                  color: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                      side: const BorderSide(
-                                          width: 1, color: Color(0xFFDEDEDE)),
-                                      borderRadius: BorderRadius.circular(16))),
-                              child: Row(
-                                children: <Widget>[
-                                  SvgPicture.asset(
-                                      'assets/images/icon-edit.svg'),
-                                  const SizedBox(width: 4),
-                                  const Text(
-                                    'Edit Address',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                        color: Color(0xFF303336)),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              print('Add Note button pressed');
-                            },
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 6),
-                              decoration: ShapeDecoration(
-                                  color: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                      side: const BorderSide(
-                                          width: 1, color: Color(0xFFDEDEDE)),
-                                      borderRadius: BorderRadius.circular(16))),
-                              child: Row(
-                                children: <Widget>[
-                                  SvgPicture.asset(
-                                      'assets/images/icon-note.svg'),
-                                  const SizedBox(width: 4),
-                                  const Text(
-                                    'Add Note',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                        color: Color(0xFF303336)),
-                                  )
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Divider(
-                    thickness: 0,
-                    color: Color(0xFFEAEAEA),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(
-                                    data.pngimageurl.toString(),
-                                  ),
-                                )),
-                            width: 54,
-                            height: 54,
-                          ),
-                          const SizedBox(
-                            width: 12,
-                          ),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                'Cappucino',
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFF2F2D2C)),
-                              ),
-                              Text(
-                                'with Chocolate',
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xFF9B9B9B)),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        width: 90,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(
+                  left: 30.0, top: 5, right: 30.0, bottom: 0),
+              width: w,
+              color: Colors.white,
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Center(
+                      child: Container(
+                        width: 315,
+                        height: 48,
+                        padding: const EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                            color: const Color(0xFFF2F2F2),
+                            borderRadius: BorderRadius.circular(14)),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
+                          children: [
                             GestureDetector(
                               onTap: () {
-                                print("minus button");
+                                print('Deliver button');
                               },
                               child: Container(
-                                width: 28,
-                                height: 28,
                                 alignment: Alignment.center,
-                                decoration: ShapeDecoration(
-                                    color: Colors.white,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
-                                        side: const BorderSide(
-                                            width: 1,
-                                            color: Color(0xFFEAEAEA)))),
-                                child: SvgPicture.asset(
-                                  'assets/images/icon-minus.svg',
-                                  width: 16,
-                                  height: 16,
+                                width: 153.50,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFFC67C4E),
+                                    borderRadius: BorderRadius.circular(10)),
+                                child:
+                                    // Deliver
+                                    const Text(
+                                  'Deliver',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600),
                                 ),
                               ),
                             ),
-                            const Text(
-                              '1',
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xFF2F2D2C)),
-                            ),
                             GestureDetector(
                               onTap: () {
-                                print("add button");
+                                print('Pick Up button');
                               },
                               child: Container(
-                                width: 28,
-                                height: 28,
                                 alignment: Alignment.center,
+                                width: 153.50,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFFF2F2F2),
+                                    borderRadius: BorderRadius.circular(10)),
+                                child:
+                                    // Pick Up
+                                    const Text(
+                                  'Pick Up',
+                                  style: TextStyle(
+                                      color: Color(0xFF2E2D2C),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        const Text(
+                          'Delivery Address',
+                          style: TextStyle(
+                              color: Color(0xFF2F2D2C),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        const Text(
+                          'Jl. Kpg Sutoyo',
+                          style: TextStyle(
+                              color: Color(0xFF303336),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        const Text(
+                          'Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai.',
+                          style: TextStyle(
+                              color: Color(0xFF7F7F7F),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Row(
+                          children: <Widget>[
+                            GestureDetector(
+                              onTap: () {
+                                print('edit address button pressed');
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 12, vertical: 6),
                                 decoration: ShapeDecoration(
                                     color: Colors.white,
                                     shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
                                         side: const BorderSide(
-                                            width: 1,
-                                            color: Color(0xFFEAEAEA)))),
-                                child: SvgPicture.asset(
-                                  'assets/images/icon-plus.svg',
-                                  width: 16,
-                                  height: 16,
+                                            width: 1, color: Color(0xFFDEDEDE)),
+                                        borderRadius:
+                                            BorderRadius.circular(16))),
+                                child: Row(
+                                  children: <Widget>[
+                                    SvgPicture.asset(
+                                        'assets/images/icon-edit.svg'),
+                                    const SizedBox(width: 4),
+                                    const Text(
+                                      'Edit Address',
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Color(0xFF303336)),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 8,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                print('Add Note button pressed');
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 12, vertical: 6),
+                                decoration: ShapeDecoration(
+                                    color: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                        side: const BorderSide(
+                                            width: 1, color: Color(0xFFDEDEDE)),
+                                        borderRadius:
+                                            BorderRadius.circular(16))),
+                                child: Row(
+                                  children: <Widget>[
+                                    SvgPicture.asset(
+                                        'assets/images/icon-note.svg'),
+                                    const SizedBox(width: 4),
+                                    const Text(
+                                      'Add Note',
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Color(0xFF303336)),
+                                    )
+                                  ],
                                 ),
                               ),
                             )
                           ],
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Divider(
+                      thickness: 0,
+                      color: Color(0xFFEAEAEA),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                      data.pngimageurl.toString(),
+                                    ),
+                                  )),
+                              width: 54,
+                              height: 54,
+                            ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Cappucino',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xFF2F2D2C)),
+                                ),
+                                Text(
+                                  'with Chocolate',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xFF9B9B9B)),
+                                )
+                              ],
+                            )
+                          ],
                         ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Divider(
-                    thickness: 4,
-                    color: Color(0xFFF4F4F4),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                        SizedBox(
+                          width: 90,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              GestureDetector(
+                                onTap: () {
+                                  print("minus button");
+                                },
+                                child: Container(
+                                  width: 28,
+                                  height: 28,
+                                  alignment: Alignment.center,
+                                  decoration: ShapeDecoration(
+                                      color: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          side: const BorderSide(
+                                              width: 1,
+                                              color: Color(0xFFEAEAEA)))),
+                                  child: SvgPicture.asset(
+                                    'assets/images/icon-minus.svg',
+                                    width: 16,
+                                    height: 16,
+                                  ),
+                                ),
+                              ),
+                              const Text(
+                                '1',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xFF2F2D2C)),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  print("add button");
+                                },
+                                child: Container(
+                                  width: 28,
+                                  height: 28,
+                                  alignment: Alignment.center,
+                                  decoration: ShapeDecoration(
+                                      color: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          side: const BorderSide(
+                                              width: 1,
+                                              color: Color(0xFFEAEAEA)))),
+                                  child: SvgPicture.asset(
+                                    'assets/images/icon-plus.svg',
+                                    width: 16,
+                                    height: 16,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ]),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Divider(
+              height: 0,
+              thickness: 4,
+              color: Color(0xFFF4F4F4),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: w,
+              padding: const EdgeInsets.only(
+                  left: 30.0, top: 5, right: 30.0, bottom: 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                   GestureDetector(
                     onTap: () {
                       print('Discount button clicked');
@@ -383,8 +398,96 @@ class OrderScreen extends StatelessWidget {
                             )
                           ]),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    'Payment Summary',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      const Text('Price',
+                          style: TextStyle(
+                              color: Color(0xFF2E2D2C),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400)),
+                      Text('\$ ${data.amount}',
+                          style: const TextStyle(
+                              color: Color(0xFF2E2D2C),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600)),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text('Delivery Fee',
+                          style: TextStyle(
+                              color: Color(0xFF2E2D2C),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400)),
+                      Row(
+                        children: [
+                          Text(
+                            '\$ 2.0',
+                            style: TextStyle(
+                              color: Color(0xFF2E2D2C),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              decoration: TextDecoration.lineThrough,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Text(
+                            '\$ 1.0',
+                            style: TextStyle(
+                                color: Color(0xFF2E2D2C),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const Divider(
+                    thickness: 0,
+                    color: Color(0xFFEAEAEA),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      const Text('Total Payment',
+                          style: TextStyle(
+                              color: Color(0xFF2E2D2C),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400)),
+                      Text(
+                        '\$ $totalPayment',
+                        style: const TextStyle(
+                            color: Color(0xFF2E2D2C),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ],
                   )
-                ])
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -404,11 +507,111 @@ class OrderScreen extends StatelessWidget {
           ),
           color: Colors.white,
         ),
-        child: const BottomAppBar(
+        child: BottomAppBar(
           color: Colors.transparent,
           elevation: 0,
-          height: 87,
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
+          height: 125,
+          padding:
+              const EdgeInsets.only(right: 30, left: 30, top: 16, bottom: 0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            alignment: Alignment.center,
+                            child: SvgPicture.asset(
+                                'assets/images/icon-cash.svg',
+                                width: 24,
+                                height: 24),
+                          ),
+                          const SizedBox(
+                            width: 12,
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF6F6F6),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 5),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFC67C4E),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: const Text('Cash',
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.white)),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.only(
+                                      left: 6, top: 5, right: 14, bottom: 5),
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Text('\$ $totalPayment',
+                                      style: const TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Color(0xFF2F2D2C))),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print('dotted button clicked');
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: SvgPicture.asset('assets/images/icon-dots.svg',
+                          width: 24, height: 24),
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 14,
+              ),
+              GestureDetector(
+                onTap: () {
+                  print('Order button clicked');
+                },
+                child: Container(
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 109, vertical: 21),
+                    decoration: BoxDecoration(
+                        color: const Color(0xFFC67C4E),
+                        borderRadius: BorderRadius.circular(12)),
+                    child: const Text(
+                      'Order',
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white),
+                    )),
+              )
+            ],
+          ),
         ),
       ),
     );
