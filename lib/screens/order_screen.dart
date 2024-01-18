@@ -21,12 +21,7 @@ class OrderScreen extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(left: 31.0),
           child: GestureDetector(
-            onTap: () => Navigator.pushNamed(context, '/detail',
-                arguments: CoffeeDetailData(
-                    ratings: data.ratings,
-                    pngimageurl: data.pngimageurl,
-                    amount: data.amount,
-                    index: data.index)),
+            onTap: () => Navigator.pop(context, '/detail'),
             child: Container(
               alignment: Alignment.center,
               child: SvgPicture.asset(

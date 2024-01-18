@@ -21,7 +21,7 @@ class DetailScreen extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(left: 31.0),
           child: GestureDetector(
-            onTap: () => Navigator.pushNamed(context, '/home'),
+            onTap: () => Navigator.pop(context, '/home'),
             child: Container(
               alignment: Alignment.center,
               child: SvgPicture.asset(
