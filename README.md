@@ -18,15 +18,16 @@ This is a mobile UI built with Flutter for a coffee app.
   </tr>
   <tr>
       <td><img src="https://github.com/onaya7/Coffie/assets/63925047/ad9f2344-8899-4423-a02a-d63740e6b85a" width=207 height=448></td>
-    <td><img src="https://github.com/onaya7/Coffie/assets/63925047/5474c77a-9f89-4bf1-b871-842850b150fb" width=207 height=448></td>
+              <td><img src="https://github.com/onaya7/Coffie/assets/63925047/a9d6248e-38aa-430f-b769-b7c945e549b5" width=207 height=448></td>
+
   </tr>
   <tr>
     <th>Screen 3</th>
     <th>Screen 4</th>
   </tr>
   <tr>
-      <td><img src="https://github.com/onaya7/Coffie/assets/63925047/f0118eed-e709-4cb7-a713-f48de7aaed99" width=207 height=448></td>
-        <td><img src="https://github.com/onaya7/Coffie/assets/63925047/a9d6248e-38aa-430f-b769-b7c945e549b5" width=207 height=448></td>
+    <td><img src="https://github.com/onaya7/Coffie/assets/63925047/f0118eed-e709-4cb7-a713-f48de7aaed99" width=207 height=448></td>
+    <td><img src="https://github.com/onaya7/Coffie/assets/63925047/fec286d1-31df-4feb-a8b7-42e9e5899a85" width=207 height=448></td>
   </tr>
 </table>
 
