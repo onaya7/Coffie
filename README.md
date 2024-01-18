@@ -52,6 +52,6 @@ Contributions are welcome! If you'd like to contribute to Coffie, please follow 
 
 This project is licensed under the [MIT License](https://github.com/onaya7/Coffie/blob/master/LICENSE.md).
 
-# Figma Design Link
+## Figma Design Link
 
 https://www.figma.com/file/C5W0scsKkjHrLzrYR2sABQ/Coffee-Shop-Mobile-App-Design-(Community)?type=design&node-id=2%3A2&mode=design&t=ry7E9OaNnJVDPkLS-1
